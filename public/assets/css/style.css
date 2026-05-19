@@ -1280,6 +1280,30 @@ main {
 }
 
 @media (max-width: 1099px) {
+  .section {
+    padding: 4.9vw 5.74vw;
+  }
+
+  .section-title {
+    margin-bottom: 2.55vw;
+  }
+
+  .section-title span {
+    font-size: 1.6vw;
+  }
+
+  .section-title h2 {
+    padding-bottom: 1.7vw;
+    font-size: 3.9vw;
+    line-height: 1.22;
+    overflow-wrap: normal;
+  }
+
+  .section-title h2::after {
+    width: 3.3vw;
+    height: 0.21vw;
+  }
+
   .hero {
     min-height: 67.55vw;
     padding: 4.47vw 3.83vw 2.55vw;
@@ -1372,6 +1396,410 @@ main {
     height: 2.34vw;
     margin-right: 0.85vw;
     border-width: 0.21vw;
+  }
+
+  .worries {
+    padding-top: 3.4vw;
+  }
+
+  .icon-grid {
+    gap: 1.49vw;
+    max-width: 83vw;
+  }
+
+  .worries-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .mini-card,
+  .worries-grid .mini-card,
+  .reason-grid .mini-card {
+    grid-template-columns: 12.8vw minmax(0, 1fr);
+    min-height: 13.2vw;
+    padding: 1.8vw 2vw;
+    border-radius: 1.28vw;
+  }
+
+  .generated-icon,
+  .worries-grid .generated-icon,
+  .service-generated-icon {
+    width: 8.6vw;
+    height: 8.6vw;
+    transform: scale(1.35);
+  }
+
+  .mini-card h3,
+  .worries-grid .mini-card h3 {
+    font-size: 2vw;
+    line-height: 1.48;
+    overflow-wrap: normal;
+  }
+
+  .mini-card p {
+    margin-top: 0.43vw;
+    font-size: 1.55vw;
+    line-height: 1.62;
+  }
+
+  .service-grid {
+    gap: 1.38vw;
+    max-width: 83vw;
+  }
+
+  .service-card {
+    grid-template-columns: 12.8vw minmax(0, 1fr) 2.4vw;
+    min-height: 12.6vw;
+    padding: 1.9vw 2.1vw 1.9vw 2.55vw;
+    border-radius: 1.28vw;
+  }
+
+  .service-card h3 {
+    margin-bottom: 0.55vw;
+    font-size: 2.55vw;
+  }
+
+  .service-card p {
+    font-size: 1.6vw;
+    line-height: 1.7;
+    overflow-wrap: normal;
+  }
+
+  .card-arrow {
+    font-size: 4.9vw;
+  }
+
+  .reason {
+    padding-bottom: 4.7vw;
+  }
+
+  .reason::after {
+    bottom: -7vw;
+    height: 12.34vw;
+  }
+
+  .reason-grid {
+    grid-template-columns: 1fr;
+    max-width: 75.5vw;
+  }
+
+  .reason-grid .mini-card {
+    grid-template-columns: 15vw minmax(0, 1fr);
+    min-height: 12vw;
+    padding: 1.7vw 2.4vw;
+  }
+
+  .reason-grid .mini-card h3 {
+    font-size: 2.25vw;
+  }
+
+  .reason-grid .mini-card p {
+    font-size: 1.7vw;
+  }
+
+  #price {
+    padding-top: 5.5vw;
+  }
+
+  .price-grid {
+    max-width: 75.5vw;
+  }
+
+  .price-card {
+    grid-template-columns: 7.2vw minmax(0, 1fr) auto 2.2vw;
+    min-height: 9.2vw;
+    padding: 1.6vw 1.5vw 1.6vw 2.35vw;
+    border-radius: 1.28vw;
+  }
+
+  .price-card + .price-card {
+    margin-top: 0.85vw;
+  }
+
+  .price-card.featured {
+    padding-top: 3.4vw;
+  }
+
+  .popular {
+    width: 18.9vw;
+    height: 3.3vw;
+    padding-left: 1.9vw;
+    border-radius: 1.06vw 0 0 0;
+    font-size: 1.48vw;
+    line-height: 3.3vw;
+  }
+
+  .price-generated-icon {
+    width: 5.75vw;
+    height: 5.75vw;
+    padding: 1.06vw;
+  }
+
+  .price-card h3 {
+    font-size: 2.05vw;
+  }
+
+  .price {
+    margin-right: 1.06vw;
+    font-size: 1.65vw;
+  }
+
+  .price strong {
+    font-size: 4.8vw;
+  }
+
+  .price.consult {
+    font-size: 3.9vw;
+  }
+
+  .tags {
+    display: flex;
+    gap: 0.64vw;
+    margin-top: 0.8vw;
+  }
+
+  .tags span {
+    padding: 0.32vw 1.06vw;
+    font-size: 1.28vw;
+  }
+
+  .voice-wrap {
+    margin-inline: -5.74vw;
+  }
+
+  .voice-grid {
+    grid-auto-flow: initial;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-columns: initial;
+    gap: 1.49vw;
+    max-width: 89vw;
+    margin: 0 auto;
+    padding: 0 0 0.85vw;
+    overflow: visible;
+  }
+
+  .voice-card {
+    min-height: 20.6vw;
+    padding: 1.9vw;
+    border-radius: 1.28vw;
+  }
+
+  .voice-head {
+    grid-template-columns: 6.6vw minmax(0, 1fr);
+    gap: 1.06vw;
+  }
+
+  .avatar {
+    width: 6.2vw;
+    height: 6.2vw;
+  }
+
+  .voice-card h3 {
+    font-size: 1.45vw;
+  }
+
+  .voice-head p,
+  .voice-card small {
+    font-size: 1.4vw;
+  }
+
+  .voice-card > p {
+    margin: 1.49vw 0 1.28vw;
+    font-size: 1.38vw;
+    line-height: 1.7;
+  }
+
+  .slider-arrow {
+    display: grid;
+    width: 4.15vw;
+    height: 4.15vw;
+    font-size: 3.2vw;
+  }
+
+  .trainer-card-large,
+  .access-card,
+  .final-cta {
+    grid-template-columns: 42% minmax(0, 1fr);
+    max-width: 89.4vw;
+    border-radius: 1.28vw;
+  }
+
+  .trainer-card-large img,
+  .final-cta img {
+    min-height: 27.65vw;
+  }
+
+  .trainer-copy {
+    padding: 2.55vw 2.98vw;
+  }
+
+  .trainer-copy h3 {
+    font-size: 3.1vw;
+  }
+
+  .trainer-copy p,
+  .trainer-copy li {
+    font-size: 1.55vw;
+    line-height: 1.65;
+  }
+
+  .trainer-copy ul {
+    gap: 0.85vw;
+    margin-bottom: 1.7vw;
+  }
+
+  .trainer-copy li {
+    padding-left: 2.55vw;
+  }
+
+  .trainer-copy li::before {
+    width: 1.7vw;
+    height: 1.7vw;
+    font-size: 1.17vw;
+  }
+
+  .placeholder {
+    padding: 1.06vw;
+    border-radius: 0.64vw;
+    font-size: 1.35vw;
+  }
+
+  .access-card {
+    grid-template-columns: 49% minmax(0, 1fr);
+    gap: 2.77vw;
+    padding: 2.13vw;
+  }
+
+  .access-card > img {
+    height: 31.28vw;
+    border-radius: 0.85vw;
+  }
+
+  .access-info h3,
+  .access-info dt {
+    font-size: 2.35vw;
+  }
+
+  .access-info h3 {
+    padding-left: 4.7vw;
+    padding-bottom: 2.55vw;
+  }
+
+  .access-info h3::before,
+  .access-info dt::before {
+    width: 2.77vw;
+    height: 2.77vw;
+    border-width: 0.32vw;
+  }
+
+  .access-info dl div {
+    padding: 2.55vw 0 2.35vw 4.7vw;
+  }
+
+  .access-info dd {
+    margin-top: 1.06vw;
+    font-size: 1.7vw;
+  }
+
+  .faq-list {
+    gap: 1.06vw;
+    max-width: 89.4vw;
+  }
+
+  .faq-card {
+    grid-template-columns: 4.05vw minmax(0, 1fr) 2.35vw;
+    gap: 1.49vw;
+    min-height: 7.85vw;
+    padding: 1.6vw 1.9vw;
+    border-radius: 1.28vw;
+  }
+
+  .faq-card > span:first-child {
+    width: 3.62vw;
+    height: 3.62vw;
+    font-size: 1.55vw;
+  }
+
+  .faq-card h3 {
+    font-size: 1.8vw;
+  }
+
+  .faq-card p {
+    font-size: 1.45vw;
+  }
+
+  .faq-chevron {
+    font-size: 2.65vw;
+  }
+
+  .final-cta {
+    margin: 2.35vw auto 3.6vw;
+  }
+
+  .final-cta > div {
+    gap: 1.6vw;
+    padding: 2.77vw 3.4vw;
+  }
+
+  .final-cta h2 {
+    font-size: 4.1vw;
+  }
+
+  .final-cta p {
+    font-size: 1.6vw;
+  }
+
+  .final-cta small {
+    font-size: 1.45vw;
+  }
+
+  .site-footer {
+    grid-template-columns: 26% 19% minmax(0, 1fr);
+    gap: 2.77vw;
+    padding: 3.6vw 5.74vw 0;
+  }
+
+  .footer-brand .brand-mark {
+    width: 6.17vw;
+    height: 6.17vw;
+    font-size: 4.05vw;
+  }
+
+  .footer-brand .brand-text {
+    font-size: 3.1vw;
+  }
+
+  .site-footer nav {
+    gap: 1.28vw;
+  }
+
+  .site-footer nav a,
+  .site-footer address p {
+    font-size: 1.55vw;
+  }
+
+  .site-footer address {
+    grid-column: auto;
+    gap: 1.49vw;
+    padding-left: 2.77vw;
+    border-left: 1px solid var(--line);
+  }
+
+  .site-footer address strong {
+    font-size: 2.55vw;
+  }
+
+  .footer-cta {
+    min-height: 6.17vw;
+    padding-inline: 2.35vw;
+    font-size: 2.02vw;
+  }
+
+  .footer-bottom {
+    display: flex;
+    gap: 2.13vw;
+    margin-top: 2.35vw;
+    padding: 1.9vw 0;
+    font-size: 1.38vw;
   }
 }
 
