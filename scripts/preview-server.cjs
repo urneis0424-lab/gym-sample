@@ -42,11 +42,19 @@ http
         return;
       }
 
+      let body = data;
+      if (path.basename(filePath) === "index.html") {
+        body = Buffer.from(
+          data.toString("utf8").replace("/src/main.tsx", "/app.js"),
+          "utf8",
+        );
+      }
+
       res.writeHead(200, {
         "Content-Type": types[path.extname(filePath)] || "application/octet-stream",
         "Cache-Control": "no-store",
       });
-      res.end(data);
+      res.end(body);
     });
   })
   .listen(port, "127.0.0.1");

@@ -5,6 +5,7 @@ dist/
 .wrangler/
 .vite/
 *.log
+mobile-check*.png
 *.tsbuildinfo
 public/app.js
 public/assets/icons/generated-icon-sheet.png
