@@ -1279,6 +1279,102 @@ main {
   }
 }
 
+@media (max-width: 1099px) {
+  .hero {
+    min-height: 67.55vw;
+    padding: 4.47vw 3.83vw 2.55vw;
+  }
+
+  .hero-copy {
+    gap: 1.91vw;
+    max-width: 55.32vw;
+  }
+
+  .hero h1 {
+    width: 59.57vw;
+    min-width: 0;
+    font-size: 5.1vw;
+    line-height: 1.42;
+    text-shadow: none;
+  }
+
+  .hero p {
+    width: 41.49vw;
+    min-width: 0;
+    font-size: 2.13vw;
+    line-height: 1.9;
+    text-shadow: none;
+  }
+
+  .hero-visual {
+    top: 1.91vw;
+    right: auto;
+    left: 42.13vw;
+    width: 57.87vw;
+    height: 55.74vw;
+  }
+
+  .hero-visual img {
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 14%, #000 100%);
+    mask-image: linear-gradient(90deg, transparent 0%, #000 14%, #000 100%);
+  }
+
+  .hero-actions {
+    gap: 1.49vw;
+    width: 45.96vw;
+    margin-top: 1.49vw;
+  }
+
+  .button {
+    min-height: 7.13vw;
+    padding-inline: 2.55vw;
+    border-radius: 0.85vw;
+    font-size: 2.45vw;
+  }
+
+  .button::after,
+  .footer-cta::after {
+    font-size: 3.51vw;
+  }
+
+  .chat-icon {
+    width: 3.3vw;
+    height: 2.45vw;
+  }
+
+  .chat-icon::before {
+    bottom: -0.43vw;
+    left: 0.74vw;
+    border-top-width: 0.85vw;
+    border-right-width: 0.85vw;
+  }
+
+  .chat-icon::after {
+    inset: -0.53vw 0 0;
+    font-size: 1.7vw;
+  }
+
+  .hero-badges {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.28vw;
+    width: 92.34vw;
+    margin-top: 2.77vw;
+  }
+
+  .hero-badges li {
+    min-height: 5.96vw;
+    border-radius: 0.85vw;
+    font-size: 2.02vw;
+  }
+
+  .hero-badges li::before {
+    width: 2.34vw;
+    height: 2.34vw;
+    margin-right: 0.85vw;
+    border-width: 0.21vw;
+  }
+}
+
 @media (min-width: 1100px) {
   .site-header {
     grid-template-columns: auto 1fr auto;
