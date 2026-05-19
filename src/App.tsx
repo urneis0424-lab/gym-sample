@@ -37,7 +37,7 @@ const services: CardItem[] = [
 const reasons: CardItem[] = [
   { title: "初心者専門", body: "運動が苦手な方や未経験の方を専門にサポートします。", icon: "beginner-specialist" },
   { title: "完全予約制", body: "一人ひとりにしっかり向き合う完全予約制で安心です。", icon: "reservation" },
-  { title: "金沢市内で通いやすい", body: "金沢駅からアクセス良好。仕事帰りやお買い物ついでにも。", icon: "access-kanazawa" },
+  { title: "金沢市内で通いやすい", body: "金沢駅から車で約10分。駐車場完備で通いやすい立地です。", icon: "access-kanazawa" },
   { title: "LINEで予約完結", body: "予約から変更・相談までLINEで簡単に完結できます。", icon: "line-reservation" },
 ];
 
@@ -90,7 +90,7 @@ const voices: Voice[] = [
 const faqs = [
   {
     question: "初心者でも大丈夫ですか？",
-    answer: "はい、9割以上が初心者の方です。お一人おひとりのペースに合わせて丁寧にサポートしますのでご安心ください。",
+    answer: "はい、9割以上が初心者の方です。お一人おひとりのペースに合わせて丁寧にサポートします。",
   },
   {
     question: "予約方法は？",
@@ -188,7 +188,7 @@ function Hero() {
           <li>金沢市内</li>
         </ul>
       </div>
-      <div className="hero-visual" aria-label="トレーニング風景">
+      <div className="hero-visual">
         <img src="/assets/images/hero-training.png" alt="トレーナーが女性のトレーニングをサポートしている様子" />
       </div>
     </section>
@@ -199,8 +199,10 @@ function IconCard({ item }: { item: CardItem }) {
   return (
     <article className="mini-card">
       <GeneratedIcon name={item.icon} />
-      <h3>{item.title}</h3>
-      {item.body && <p>{item.body}</p>}
+      <div>
+        <h3>{item.title}</h3>
+        {item.body && <p>{item.body}</p>}
+      </div>
     </article>
   );
 }
@@ -213,26 +215,30 @@ function ServiceCard({ item }: { item: CardItem }) {
         <h3>{item.title}</h3>
         <p>{item.body}</p>
       </div>
+      <span className="card-arrow" aria-hidden="true">›</span>
     </article>
   );
 }
 
 function PriceCard({ plan }: { plan: PricePlan }) {
+  const isConsult = plan.price === "要相談";
+
   return (
     <article className={`price-card ${plan.featured ? "featured" : ""}`}>
       {plan.featured && <div className="popular">初心者に人気</div>}
       <GeneratedIcon name={plan.icon} className="price-generated-icon" />
-      <h3>{plan.title}</h3>
-      <p className={`price ${plan.price === "要相談" ? "consult" : ""}`}>
-        {plan.price === "要相談" ? plan.price : <><strong>{plan.price}</strong>{plan.suffix}</>}
+      <div className="price-name">
+        <h3>{plan.title}</h3>
+        {plan.badges && (
+          <div className="tags">
+            {plan.badges.map((badge) => <span key={badge}>{badge}</span>)}
+          </div>
+        )}
+      </div>
+      <p className={`price ${isConsult ? "consult" : ""}`}>
+        {isConsult ? plan.price : <><strong>{plan.price}</strong>{plan.suffix}</>}
       </p>
-      {plan.badges && (
-        <div className="tags">
-          {plan.badges.map((badge) => <span key={badge}>{badge}</span>)}
-        </div>
-      )}
-      <p>{plan.body}</p>
-      <a href="https://line.me/" target="_blank" rel="noopener noreferrer">詳細を見る</a>
+      <span className="card-arrow" aria-hidden="true">›</span>
     </article>
   );
 }
@@ -262,7 +268,7 @@ function App() {
 
         <section className="section worries">
           <SectionTitle eyebrow="WORRIES" title="こんなお悩みありませんか？" />
-          <div className="icon-grid four">{worries.map((item) => <IconCard key={item.title} item={item} />)}</div>
+          <div className="icon-grid worries-grid">{worries.map((item) => <IconCard key={item.title} item={item} />)}</div>
         </section>
 
         <section className="section" id="service">
@@ -272,19 +278,21 @@ function App() {
 
         <section className="section reason">
           <SectionTitle eyebrow="REASON" title="選ばれる理由" />
-          <div className="icon-grid four">{reasons.map((item) => <IconCard key={item.title} item={item} />)}</div>
+          <div className="icon-grid reason-grid">{reasons.map((item) => <IconCard key={item.title} item={item} />)}</div>
         </section>
 
         <section className="section" id="price">
           <SectionTitle eyebrow="PRICE" title="料金" />
           <div className="price-grid">{pricePlans.map((plan) => <PriceCard key={plan.title} plan={plan} />)}</div>
-          <p className="note">※プラン内容や料金は変更になる場合がございます。詳細はお問い合わせください。</p>
         </section>
 
         <section className="section voice" id="voice">
           <SectionTitle eyebrow="VOICE" title="お客様の声" />
-          <div className="voice-grid">{voices.map((voice) => <VoiceCard key={voice.title} voice={voice} />)}</div>
-          <p className="note">※個人の感想であり、効果を保証するものではありません。</p>
+          <div className="voice-wrap">
+            <button className="slider-arrow prev" type="button" aria-label="前へ">‹</button>
+            <div className="voice-grid">{voices.map((voice) => <VoiceCard key={voice.title} voice={voice} />)}</div>
+            <button className="slider-arrow next" type="button" aria-label="次へ">›</button>
+          </div>
         </section>
 
         <section className="section trainer-section">
@@ -311,8 +319,8 @@ function App() {
             <div className="access-info">
               <h3>石川県金沢市</h3>
               <dl>
-                <div><dt>営業時間</dt><dd>平日 10:00〜22:00 / 土日祝 9:00〜19:00</dd></div>
-                <div><dt>金沢市内で通いやすい</dt><dd>金沢駅から車で約10分・駐車場完備で通いやすい立地です。</dd></div>
+                <div><dt>営業時間</dt><dd>平日 10:00〜22:00<br />土日祝 9:00〜19:00</dd></div>
+                <div><dt>金沢市内で通いやすい</dt><dd>金沢駅から車で約10分。<br />駐車場完備で通いやすい立地です。</dd></div>
               </dl>
             </div>
           </div>
@@ -321,11 +329,15 @@ function App() {
         <section className="section faq" id="faq">
           <SectionTitle eyebrow="FAQ" title="よくある質問" />
           <div className="faq-list">
-            {faqs.map((faq, index) => (
-              <details key={faq.question} open={index === 0}>
-                <summary><span>Q</span>{faq.question}</summary>
-                <p>{faq.answer}</p>
-              </details>
+            {faqs.map((faq) => (
+              <article className="faq-card" key={faq.question}>
+                <span>Q</span>
+                <div>
+                  <h3>{faq.question}</h3>
+                  <p>{faq.answer}</p>
+                </div>
+                <span className="faq-chevron" aria-hidden="true">⌄</span>
+              </article>
             ))}
           </div>
         </section>
@@ -348,9 +360,9 @@ function App() {
         </nav>
         <address>
           <p>石川県金沢市<br />金沢駅から車で約10分・駐車場完備</p>
-          <p>076-123-4567<br />受付時間：平日 10:00〜22:00<br />土日祝 9:00〜19:00</p>
+          <p><strong>076-123-4567</strong><br />受付時間：平日 10:00〜22:00<br />土日祝 9:00〜19:00</p>
+          <a className="footer-cta" href="https://line.me/" target="_blank" rel="noopener noreferrer"><ChatIcon />LINEで予約</a>
         </address>
-        <a className="footer-cta" href="https://line.me/" target="_blank" rel="noopener noreferrer"><ChatIcon />LINEで予約</a>
         <div className="footer-bottom">
           <small>© RESET BODY STUDIO All Rights Reserved.</small>
           <span>プライバシーポリシー　｜　特定商取引法に基づく表記</span>
