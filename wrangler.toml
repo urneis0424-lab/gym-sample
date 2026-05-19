@@ -1,0 +1,6 @@
+name = "reset-body-studio"
+compatibility_date = "2026-05-19"
+pages_build_output_dir = "dist"
+
+[vars]
+SERVICE_NAME = "RESET BODY STUDIO"

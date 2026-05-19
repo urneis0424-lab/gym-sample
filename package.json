@@ -1,0 +1,34 @@
+{
+  "name": "reset-body-studio",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host localhost --port 5180 --strictPort",
+    "dev:auto": "vite",
+    "preview:local": "node scripts/bundle-preview.cjs && node scripts/preview-server.cjs",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "deploy": "wrangler pages deploy dist",
+    "cf-typegen": "wrangler types"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "4.3.4",
+    "hono": "^4.6.16",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "vite": "6.0.7"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241230.0",
+    "@types/node": "^22.10.2",
+    "@types/react": "^19.0.2",
+    "@types/react-dom": "^19.0.2",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "rollup": "npm:@rollup/wasm-node@^4.60.4",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.2",
+    "wrangler": "^3.99.0"
+  }
+}

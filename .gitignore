@@ -1,0 +1,10 @@
+node_modules/
+dist/
+/assets/
+完成予想画像/
+.wrangler/
+.vite/
+*.log
+*.tsbuildinfo
+public/app.js
+public/assets/icons/generated-icon-sheet.png
