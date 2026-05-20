@@ -867,6 +867,7 @@ main {
 
 .access-info dt {
   position: relative;
+  padding-left: 44px;
 }
 
 .access-info dt::before {
@@ -1699,6 +1700,10 @@ main {
     width: 2.77vw;
     height: 2.77vw;
     border-width: 0.32vw;
+  }
+
+  .access-info dt {
+    padding-left: 4.7vw;
   }
 
   .access-info dl div {
