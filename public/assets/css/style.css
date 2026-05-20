@@ -1567,52 +1567,62 @@ main {
   }
 
   .voice-grid {
-    grid-auto-flow: initial;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-columns: initial;
-    gap: 1.49vw;
-    max-width: 89vw;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(68vw, 68vw);
+    grid-template-columns: none;
+    gap: 2.1vw;
+    max-width: none;
     margin: 0 auto;
-    padding: 0 0 0.85vw;
-    overflow: visible;
+    overflow-x: auto;
+    padding: 0 10vw 1.3vw;
+    scroll-padding-inline: 10vw;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .voice-grid::-webkit-scrollbar {
+    display: none;
   }
 
   .voice-card {
-    min-height: 20.6vw;
-    padding: 1.9vw;
+    min-height: 28vw;
+    padding: 2.8vw;
     border-radius: 1.28vw;
+    scroll-snap-align: center;
   }
 
   .voice-head {
-    grid-template-columns: 6.6vw minmax(0, 1fr);
-    gap: 1.06vw;
+    grid-template-columns: 8.4vw minmax(0, 1fr);
+    gap: 1.6vw;
   }
 
   .avatar {
-    width: 6.2vw;
-    height: 6.2vw;
+    width: 8vw;
+    height: 8vw;
   }
 
   .voice-card h3 {
-    font-size: 1.45vw;
+    margin-bottom: 0.9vw;
+    font-size: 2vw;
   }
 
   .voice-head p,
   .voice-card small {
-    font-size: 1.4vw;
+    font-size: 1.75vw;
   }
 
   .voice-card > p {
-    margin: 1.49vw 0 1.28vw;
-    font-size: 1.38vw;
-    line-height: 1.7;
+    margin: 2.3vw 0 1.8vw;
+    font-size: 1.9vw;
+    line-height: 1.75;
   }
 
   .slider-arrow {
     display: grid;
-    width: 4.15vw;
-    height: 4.15vw;
-    font-size: 3.2vw;
+    width: 5.4vw;
+    height: 5.4vw;
+    font-size: 4.2vw;
   }
 
   .trainer-card-large,

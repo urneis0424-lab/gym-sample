@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import type { CardItem, PricePlan, Voice } from "./types";
 
 const navItems = [
@@ -259,6 +260,30 @@ function VoiceCard({ voice }: { voice: Voice }) {
   );
 }
 
+function VoiceSection() {
+  const trackRef = useRef<HTMLDivElement>(null);
+
+  const scrollVoices = (direction: "prev" | "next") => {
+    const track = trackRef.current;
+    if (!track) return;
+
+    const card = track.querySelector<HTMLElement>(".voice-card");
+    const amount = card ? card.offsetWidth + 18 : track.clientWidth * 0.8;
+    track.scrollBy({ left: direction === "next" ? amount : -amount, behavior: "smooth" });
+  };
+
+  return (
+    <section className="section voice" id="voice">
+      <SectionTitle eyebrow="VOICE" title="お客様の声" />
+      <div className="voice-wrap">
+        <button className="slider-arrow prev" type="button" aria-label="前へ" onClick={() => scrollVoices("prev")}>‹</button>
+        <div className="voice-grid" ref={trackRef}>{voices.map((voice) => <VoiceCard key={voice.title} voice={voice} />)}</div>
+        <button className="slider-arrow next" type="button" aria-label="次へ" onClick={() => scrollVoices("next")}>›</button>
+      </div>
+    </section>
+  );
+}
+
 function App() {
   return (
     <>
@@ -286,14 +311,7 @@ function App() {
           <div className="price-grid">{pricePlans.map((plan) => <PriceCard key={plan.title} plan={plan} />)}</div>
         </section>
 
-        <section className="section voice" id="voice">
-          <SectionTitle eyebrow="VOICE" title="お客様の声" />
-          <div className="voice-wrap">
-            <button className="slider-arrow prev" type="button" aria-label="前へ">‹</button>
-            <div className="voice-grid">{voices.map((voice) => <VoiceCard key={voice.title} voice={voice} />)}</div>
-            <button className="slider-arrow next" type="button" aria-label="次へ">›</button>
-          </div>
-        </section>
+        <VoiceSection />
 
         <section className="section trainer-section">
           <SectionTitle eyebrow="TRAINER" title="トレーナー紹介" />
